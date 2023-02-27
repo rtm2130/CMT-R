@@ -1,0 +1,11 @@
+All files in this repo with the exception of mnlogit_1.2.6.tar.gz and newmnlogit.R have the following sole copywright statement:
+Copyright (C) 2020 Ryan McNellis
+
+Due to the mnlogit R package being removed from CRAN, and due to needing to change the order of the import statements in the hessian.h file within the mnlogit package to address an import issue in certain environments, we attach a patched version of the mnlogit package directly to this repo with filename "mnlogit_1.2.6.tar.gz". This file has the following copywright statement:
+Copyright (C) 2016 Asad Hasan and Zhiyu Wang and Alireza S. Mahani
+
+The newmnlogit.R program contains code from the mnlogit package and from the limSolve package. Therefore, there are multiple copywright owners to the newmnlogit.R program:
+Copyright (C) 2020 Ryan McNellis
+Copyright (C) 2016 Asad Hasan and Zhiyu Wang and Alireza S. Mahani
+Copyright (C) 2009 Karline Soetaert and Karel Van den Meersche and Dick van Oevelen
+Details regarding the specific code derived from the mnlogit and limSolve packages, and the changes made by Ryan McNellis to this code, can be found in the newmnlogit.R file.
