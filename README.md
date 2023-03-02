@@ -31,7 +31,7 @@ In this step, we will be creating a new conda virtual environment called `mstenv
 
 1. Build a new MST virtual environment which will be named mstenv with the recommended Python and R versions: `conda create --name mstenv python=2.7.15 r-essentials r-base=3.6.1`
 2. Activate the newly-created MST virtual environment: `conda activate mstenv`. All subsequent steps should be followed within the activated virtual environment. 
-3. Install the scikit-learn, joblib, and rpy2 packages. Execute the following: `conda install scikit-learn`, `conda install -c anaconda joblib`, `conda install -c r rpy2`
+3. Install the pandas, scikit-learn, joblib, and rpy2 packages. Execute the following: `conda install pandas`, `conda install scikit-learn`, `conda install -c anaconda joblib`, `conda install -c r rpy2`
 4. Install tensorflow ensuring compatibility with python 2.7. The following worked for us: `pip install --upgrade tensorflow`
 5. Install the R package dependencies. Execute the following: `conda install -c conda-forge r-data.table  r-matrixstats=0.57.0 r-mlogit=1.1.1`. If these commands do not work then you may need to install additional channels, e.g. `conda config --add channels defaults` and `conda config --add channels bioconda`
 6. Deactivate the environment: `conda deactivate`

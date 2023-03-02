@@ -92,7 +92,8 @@ class LeafModelRMNLogit(object):
   Any additional args passed to MST's fit() function are directly passed here
   '''
   def fit(self, A, Y, weights, fit_init=None, refit=False, 
-          model_type=0, num_features=4, is_bias=True, **kwargs):
+          model_type=0, num_features=4, is_bias=True, loglik_proba_cap=0, **kwargs):
+    self.loglik_proba_cap = loglik_proba_cap
     
     #no need to refit this model since it is already fit to optimality
     #note: change this behavior if debias=TRUE
@@ -252,10 +253,9 @@ class LeafModelRMNLogit(object):
   in the self object.
   '''
   def error(self,A,Y):
+    loglik_proba_cap = self.loglik_proba_cap
     Ypred = self.predict(A)
-#   log_probas = -np.log(np.maximum(Ypred[(np.arange(Y.shape[0]),Y)],0.001))
-#   log_probas = -np.log(np.maximum(Ypred[(np.arange(Y.shape[0]),Y)],0.01))
-    log_probas = -np.log(Ypred[(np.arange(Y.shape[0]),Y)])
+    log_probas = -np.log(np.maximum(Ypred[(np.arange(Y.shape[0]),Y)],loglik_proba_cap))
     return(log_probas)
   
   '''
